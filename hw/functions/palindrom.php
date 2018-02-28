@@ -1,5 +1,4 @@
 <?php
-
 function mirror($number){
     for ($firsNumber = 0; floor($number); $number /= 10){
         $lastNumber = $number % 10;
@@ -7,8 +6,7 @@ function mirror($number){
     }
     return $firsNumber / 10;
 }
-
-$x = rand(1, 100);
+$x = rand(1, 999);
 $y = mirror($x);
 if ($x == $y){
     echo "Число $x - палиндром.";
