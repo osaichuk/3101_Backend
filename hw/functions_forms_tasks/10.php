@@ -10,19 +10,19 @@ function getClearWords($str)
     return $arr;
 }
 
-function requestGet($key)
+function requestPost($key)
 {
-    if (isset($_GET[$key])) {
-        return $_GET[$key];
+    if (isset($_POST[$key])) {
+        return $_POST[$key];
     }
 
     return null;
 }
 
-$str = requestGet('message');
+$str = requestPost('message');
 
 $arr = array_unique(getClearWords($str));
-$uniqueWords = $_GET ? count($arr) : null;
+$uniqueWords = $_POST ? count($arr) : null;
 
 ?>
 
@@ -36,14 +36,12 @@ $uniqueWords = $_GET ? count($arr) : null;
     <title>Task 10</title>
 </head>
 <body>
-<form>
+<form method="post">
     <textarea name="message" cols="30" rows="10"></textarea>
     <button type="submit">Send</button>
 </form>
 <div>
-    <?php
-    echo "Количество уникальных слов: $uniqueWords"
-    ?>
+    <?= "Количество уникальных слов: $uniqueWords" ?>
 </div>
 </body>
 </html>

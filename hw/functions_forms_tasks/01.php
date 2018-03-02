@@ -1,9 +1,19 @@
 <?php
+
 function getCommonWords($a, $b)
 {
-    $arr = [];
-    $arr[] = $a;
-    $arr[] = $b;
+    $words1 = array_unique(getTrimWords(array_filter(preg_split("/\s/", $a))));
+    $words2 = array_unique(getTrimWords(array_filter(preg_split("/\s/", $b))));
+    $sameWordsArr = array_intersect($words1, $words2);
+    $sameWords = implode(" <br>", $sameWordsArr);
+    return $sameWords;
+}
+
+function getTrimWords($arr)
+{
+    foreach ($arr as &$item){
+        $item = trim($item, ".,?!\"'(){}[]-");
+    }
     return $arr;
 }
 
@@ -16,7 +26,7 @@ function requestPost($key)
     return null;
 }
 
-$arr = getCommonWords(requestPost('message1'), requestPost('message2'));
+$sameWords = getCommonWords(requestPost('message1'), requestPost('message2'));
 ?>
 
 <!doctype html>
@@ -34,9 +44,6 @@ $arr = getCommonWords(requestPost('message1'), requestPost('message2'));
         <textarea name="message2" cols="30" rows="10"></textarea>
         <button type="submit">Send</button>
     </form>
-    <?php
-
-    echo "$arr[0] $arr[1]";
-    ?>
+    <?= $sameWords; ?>
 </body>
 </html>
