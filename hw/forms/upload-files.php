@@ -1,12 +1,14 @@
 <?php
-function requestGet($key)
-{
-    if (isset($_GET[$key])) {
-        return $_GET[$key];
-    }
-
-    return null;
-}
+/**
+ * Написать скрипт для загрузки пользовательских файлов.
+ * При загрузке, в зависимости от типа файла – он на сервере должен помещаться
+ * в папку /doc, или /img..etc
+ * Должно быть ограничение на прием файлов – не более 2 мб.
+ * Ссылку на форму загрузки разместить на главной странице сайта.
+ * После добавления файлов, при заходе на главную, пользователь должен видеть галерею
+ * ранее загруженных картинок, и список загруженных документов (все, что не картинки).
+ * Код максимально писать функциями.
+ */
 
 function requestFiles($key)
 {
@@ -57,7 +59,7 @@ $listFiles = array_slice($listFiles, 2);
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Task 06</title>
+    <title>Upload files</title>
     <style>
         body {
             width: 70vw;
