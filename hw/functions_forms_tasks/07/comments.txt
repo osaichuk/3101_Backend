@@ -1,0 +1,3 @@
+a:7:{i:0;a:2:{s:6:"author";s:4:"Alex";s:4:"text";s:86:"Bla bla kj;nve'kvne;vm rorvnwoirvnwrl elrvnerlvnelkvn elrkvnelvknel;vn elkvnelvnelkvnl";}i:1;a:2:{s:6:"author";s:4:"Serg";s:4:"text";s:104:"Lalala kjbslvb sjrblrrbglk lvvfnlsvnlsk ldkgvnl;knvl;d dlkgbndl;knfl;ndlkbn;jt;'pfy;hnintlnjlrkasjkbfak ";}i:2;a:2:{s:6:"author";s:0:"";s:4:"text";s:80:"hgkyfgkh.ln/oj/;o; lih kgjfhg jfhdhc fjyfjhvjv
+hvjhvkjbkjb mjbkjbjblk
+jkjbjbkn";}i:3;a:2:{s:6:"author";s:5:"Kolya";s:4:"text";s:30:"jhvjhvj khhgfk kgkfkj kvkjhvjh";}i:4;a:2:{s:6:"author";s:5:"Vasya";s:4:"text";s:4:"fuck";}i:5;a:2:{s:6:"author";s:5:"Kolya";s:4:"text";s:5:"beach";}i:6;a:2:{s:6:"author";s:5:"Petya";s:4:"text";s:4:"fuck";}}
