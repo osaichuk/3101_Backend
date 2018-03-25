@@ -1,3 +1,25 @@
+<?php
+
+require_once 'functions.php';
+
+$message = requestGet('message');
+$file = requestFiles('file');
+//var_dump($file);
+$currentDir = chooseDir($file);
+if ($_FILES){
+
+    if (validateForm($file)){
+        $message = 'Saved';
+        move_uploaded_file($file['tmp_name'], "$currentDir{$file['name']}");
+
+        //redirect('/3101/Backend/hw/forms/upload-files.php?message=' . $message);
+    } else{
+        $message = "Form invalid<br>";
+    }
+
+}
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -18,11 +40,11 @@
 <h3><i>In this gallery you can upload files max 2Mb: .jpg, .png, .txt, .doc, .docx, .pdf</i></h3>
 <h4><?= $message?></h4>
 
-<form method="post" enctype="multipart/form-data" action="index.php">
+<form method="post" enctype="multipart/form-data">
     <input type="hidden" name="MAX_FILE_SIZE" value="2000000" />
     <input type="file" name="file"><br><br>
     <button type="submit">Send</button>
 </form>
-
+<h3><a href="index.php"><< Back to gallery</a></h3>
 </body>
 </html>
