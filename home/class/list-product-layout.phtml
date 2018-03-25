@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>List products</title>
+</head>
+
+<body style="margin: 10px auto; width: 70vw; font-family: Arial">
+    <h1 style="text-align: center">Products</h1>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <?php foreach ($products as $key => $product) : ?>
+                <tr <?=$key % 2 ? 'class="gray"' : '' ?> >
+                    <td style="padding: 15px"><img style="height: 100px" src="img/<?=$product['image'] ?>" alt="<?=$product['image'] ?>"></td>
+                    <td style="padding: 15px"><?=$product['title'] ?></td>
+                    <td style="padding: 15px"><?=$product['price'] ?></td>
+                    <td style="padding: 15px"><?=$product['description'] ?></td>
+                </tr>
+            <?php endforeach ?>
+
+        </tbody>
+    </table>
+</body>
+</html>
